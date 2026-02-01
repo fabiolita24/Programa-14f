@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* IMAGEN DE FONDO REAL (NO SE DUPLICA JAMÁS) */
+.background {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;   /* 🔥 clave */
+    z-index: -2;
+}
+
+/* corazones */
+.hearts {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255, 240, 246, 0.95);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+h1 {
+    color: #d6336c;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    position: relative;
+    height: 60px;
+}
+
+button {
+    border: none;
+    padding: 12px 22px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#yes {
+    background-color: #ff5c8a;
+    color: white;
+}
+
+#no {
+    background-color: #adb5bd;
+    color: white;
+    position: absolute;
+    left: 120px;
+}
+
+/* corazones flotando */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 22px;
+    animation: float 6s linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
